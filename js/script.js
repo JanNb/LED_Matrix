@@ -1,7 +1,9 @@
+var client = new Paho.MQTT.Client("kassiopeia.mt.haw-hamburg.de", Number(8000), "/ws" , "clientID_" + parseInt(Math.random() * 100, 10));
+
 function start(){
 // Create a client instance
-client = new Paho.MQTT.Client("broker.mqttdashboard.com", Number(8000), "clientId");
-
+//var client = new Paho.MQTT.Client("kassiopeia.mt.haw-hamburg.de", Number(8000), "/ws" , "clientID_" + parseInt(Math.random() * 100, 10));
+//tcp://kassiopeia.mt.haw-hamburg.de
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
@@ -11,12 +13,12 @@ client.connect({onSuccess:onConnect});
 	
 	// called when the client connects
 function onConnect() {
-	alert("jaskdjhsljdasi");
+	alert("Connected to Led-Matrix");
   // Once a connection has been made, make a subscription and send a message.
   console.log("onConnect");
-  client.subscribe("abcwsad");
+  client.subscribe("ShayanTest");
   message = new Paho.MQTT.Message("Hello");
-  message.destinationName = "abcwsad";
+  message.destinationName = "ShayanTest";
   client.send(message);
 }
 	// called when the client loses its connection
@@ -34,15 +36,18 @@ function onMessageArrived(message) {
 
 function onClick(){
 	
+	let submitBtn = document.getElementById("submit");
+	let input = document.getElementById("text");
+	let userMessage = input.value;
 
-alert("bsdfsdf");
 
+	  message = new Paho.MQTT.Message(userMessage);
+	  message.destinationName = "ShayanTest";
+	  client.send(message);
 
-		let submitBtn = document.getElementById("submit");
-		let input = document.getElementById("text");
-
-    
-    let message = input.value;
+	
 		
 
 }
+
+
