@@ -19,6 +19,13 @@ function onConnect() {
   message.destinationName = "abcwsad";
   client.send(message);
 }
+	// called when the client loses its connection
+function onConnectionLost(responseObject) {
+  if (responseObject.errorCode !== 0) {
+    console.log("onConnectionLost:"+responseObject.errorMessage);
+  }
+}
+	
 }
 
 function onClick(){
@@ -26,12 +33,7 @@ function onClick(){
 
 alert("bsdfsdf");
 
-// called when the client loses its connection
-function onConnectionLost(responseObject) {
-  if (responseObject.errorCode !== 0) {
-    console.log("onConnectionLost:"+responseObject.errorMessage);
-  }
-}
+
 		let submitBtn = document.getElementById("submit");
 		let input = document.getElementById("text");
 
