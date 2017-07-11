@@ -14,9 +14,9 @@ function onConnect() {
 	alert("jaskdjhsljdasi");
   // Once a connection has been made, make a subscription and send a message.
   console.log("onConnect");
-  client.subscribe("Testthetopic");
+  client.subscribe("abcwsad");
   message = new Paho.MQTT.Message("Hello");
-  message.destinationName = "Testthetopic";
+  message.destinationName = "abcwsad";
   client.send(message);
 }
 }
