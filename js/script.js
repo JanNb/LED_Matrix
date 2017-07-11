@@ -1,5 +1,4 @@
-function onClick(){
-	
+function start(){
 // Create a client instance
 client = new Paho.MQTT.Client(broker.mqttdashboard.com, Number(8000), "clientId");
 
@@ -8,10 +7,9 @@ client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
 // connect the client
-client.connect({onSuccess:onConnect});
-
-
-// called when the client connects
+client.connect({onSuccess:onConnect, mqttVersion: 3});
+	
+	// called when the client connects
 function onConnect() {
 	alert("jaskdjhsljdasi");
   // Once a connection has been made, make a subscription and send a message.
@@ -21,6 +19,12 @@ function onConnect() {
   message.destinationName = "Testthetopic";
   client.send(message);
 }
+}
+
+function onClick(){
+	
+
+alert("bsdfsdf");
 
 // called when the client loses its connection
 function onConnectionLost(responseObject) {
