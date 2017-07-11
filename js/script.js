@@ -1,3 +1,7 @@
+function start(){
+	alert("hahsadjaskdjasdoasm");
+}
+
 function onClick(){
 	alert("Hello! I am an alert box!!");
 		let submitBtn = document.getElementById("submit");
