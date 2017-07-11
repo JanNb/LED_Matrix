@@ -181,6 +181,23 @@ a:hover {
     border: none;
 	font-family: 'Muli', sans-serif;
 }
+.header-left-bottom input[type="button"] {
+    background: #3be8b0;
+    color: #FFF;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: .5em 2em;
+    letter-spacing: 0px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+	font-family: 'Muli', sans-serif;
+}
 .header-left-bottom input[type="submit"]:hover {
     background: #ff4f81;
     transition: 0.5s all;
