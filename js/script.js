@@ -1,13 +1,13 @@
 function start(){
 // Create a client instance
-client = new Paho.MQTT.Client(broker.mqttdashboard.com, Number(8000), "clientId");
+client = new Paho.MQTT.Client(broker.mqttdashboard.com, Number(8000), "/ws" , "clientId");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
 // connect the client
-client.connect({onSuccess:onConnect, mqttVersion: 3});
+client.connect({onSuccess:onConnect});
 	
 	// called when the client connects
 function onConnect() {
