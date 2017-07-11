@@ -1,6 +1,6 @@
 function start(){
 // Create a client instance
-client = new Paho.MQTT.Client(broker.mqttdashboard.com, Number(8000), "/ws" , "clientId");
+client = new Paho.MQTT.Client("http://broker.mqttdashboard.com", Number(8000), "/ws" , "clientId");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
