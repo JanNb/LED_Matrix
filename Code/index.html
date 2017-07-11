@@ -30,6 +30,18 @@
 			<div class="header-bottom">
 				<div class="header-right">
 					<div class="header-left-bottom agileinfo">
+						<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+
 							<form onsubmit=" onClick();">
 							<div class="icon1">
 								<input type="text" placeholder="Enter Text here" id="text"/>
